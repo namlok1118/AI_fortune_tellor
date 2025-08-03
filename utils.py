@@ -8,11 +8,13 @@ from typing import Sequence
 from langgraph.graph.message import add_messages
 from typing_extensions import Annotated, TypedDict
 from pydantic import BaseModel, Field
+import streamlit as st
+
 
 
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
-os.environ["XAI_API_KEY"] = "xai-2wJO6Gsu6Yve6oQ6A7MaAGUIW5FU4yzfUKtHwcGgjVST1WHgOuyTy4gyoxVg1SeOXjpBQEHJyPzT8vOK"
+os.environ["XAI_API_KEY"] = st.secrets["XAI_API_KEY"]
 model = init_chat_model("grok-3-mini", model_provider="xai", tiktoken_model_name="gpt-3.5-turbo", temperature=0.7)
 
 def read_file_as_string(file_path):
