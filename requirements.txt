@@ -155,3 +155,6 @@ Werkzeug==3.0.1
 wheel==0.42.0
 wrapt==1.14.1
 zipp==3.17.0
+streamlit>=1.38.0
+langchain-xai>=0.0.1
+langchain-core>=0.3.6
